@@ -1,0 +1,78 @@
+/* CSS for AddTask component */
+
+.add-task-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  /* For smaller screens, display form elements in a column */
+  @media (max-width: 768px) {
+    .add-task-form {
+      padding: 10px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    button {
+      width: 100%;
+    }
+  }
+  
+  /* For larger screens, display form elements in a row */
+  @media (min-width: 769px) {
+    .add-task-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .form-group {
+      margin-bottom: 0;
+    }
+  
+    button {
+      width: auto;
+    }
+  }
+  

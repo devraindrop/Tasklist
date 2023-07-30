@@ -58,35 +58,54 @@ const Login = () => {
 
     return ( 
         <div>
-            {!isLoggedIn ? (
-        <>
-          <h2>User Login</h2>
-          <div>
-            <label>Username:</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div>
-            <label>Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button onClick={handleLogin}>Login</button>
-          {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        </>
-      ) : (
-        <>
           <Menu
             onLogout={handleLogout}
-          />
+            isLoggedIn={isLoggedIn}
+          />            
+
+{!isLoggedIn ? (
+        <div className="bg-gray-100 mx-auto px-4 py-8">
+          <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4">User Login</h2>
+            <div className="mb-4">
+              <label htmlFor="username" className="block text-gray-700 font-bold mb-2">
+                Username:
+              </label>
+              <input
+                type="text"
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+                Password:
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+            <button
+              onClick={handleLogin}
+              className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Login
+            </button>
+            {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
+          </div>
+        </div>
+      ) : (
+        <>
+          {/* Show content for logged-in user */}
         </>
       )}
+
         </div>
      );
 }

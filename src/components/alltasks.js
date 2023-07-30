@@ -39,7 +39,6 @@ console.log(userGroup);
               <div>
                 <strong className="text-lg mb-2">Title:</strong> {task.title} <br />
                 <strong className="text-lg mb-2">Description:</strong> {task.description} <br />
-                <strong className="text-lg mb-2">Group:</strong> {task.group}
               </div>
               <div className="flex space-x-4">
                 <button
